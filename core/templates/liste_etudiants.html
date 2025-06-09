@@ -15,7 +15,7 @@
           </thead>
         {% for etudiant in etudiants %}
           <tbody>
-              <td>{{ etudiant.user }}</td>
+              <td>{{ etudiant.user.username }}</td>
               <td>{{ etudiant.option }}</td>
               <td>{{ etudiant.filiere }}</td>
               <td>{{ etudiant.niveau }}</td>

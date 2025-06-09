@@ -30,7 +30,7 @@ def valider_preinscription(request, preinscription_id):
 
     # Création du compte utilisateur
     user = User.objects.create_user(
-        username=preins.email,  # ou une construction unique
+        username=preins.nom,  # ou une construction unique
         email=preins.email,
         role='etudiant',
         first_name=preins.nom,

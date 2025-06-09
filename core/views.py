@@ -24,7 +24,7 @@ def valider_preinscription(request, preinscription_id):
         return redirect('preinscription')
 
     # Vérifier si un utilisateur avec ce mail existe déjà
-    if User.objects.filter(username=preins.email).exists():
+    if User.objects.filter(username=preins.nom).exists():
         messages.warning(request, f"Un utilisateur avec cet email existe déjà.")
         return redirect('preinscription')
 

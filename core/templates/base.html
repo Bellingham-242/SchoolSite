@@ -24,6 +24,70 @@
 	
 	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <style>
+
+       h2::after {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        content: '';
+        display: block;
+        width: 60%;
+        height: 4px;
+        margin: 8px auto 0;
+        border-radius: 2px;
+      }
+      /* body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        padding: 40px;
+        text-align: center;
+      } */
+
+      table {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      thead {
+        background-color:rgba(255, 0, 234, 0.3);
+        color: white;
+        text-transform: uppercase;
+      }
+
+      th, td {
+        padding: 14px 20px;
+        border-bottom: 1px solid #dee2e6;
+        text-align: center;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      button {
+        color: black;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* button:hover {
+        background-color: #138496;
+      } */
+  </style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -87,45 +151,50 @@
   <section>
     <div class="container" id="base">
         <h1>T.T.G Network - Capitale du Numérique</h1>
-    <main>
-        <p>Utilisateur connecte : {{user}}</p>
-          {% if user.is_authenticated %}
-          {% if user.role %}
-          <p>Bievenue cher {{user.role}} </p>
-          {% else %}
-          <p>Bievenue cher Admin </p>
-          {% endif %}
-            {% if user.matricule %}
-            <p>ton matricule est {{user.matricule}}</p>
-            <p>
-                Cher etudiant merci d'avoir choisit T.T.G Network - Gestion École.
-                Nous vous garantissons un apprentissage serieux et rigoureux main dans 
-                la main nous avancerons en tentant de combler nos lacunes un grand merci
-                encore pour la confiance et blaindez votre morale car la route sera longue
-            </p>
-            {% elif user.code_formateur %}
-            <p>ton code est {{user.code_formateur}}</p>
-            <p>
-                Cher Formateur merci d'avoir choisit T.T.G Network - Gestion École.
-                Nous vous garantissons un engagegement sans faille de votre contrat main 
-                dans la main nous avancerons en tentant de combler nos lacunes un grand merci
-                encore pour la confiance et blaindez votre morale nous avons foi en vous
-                competences faites eblouir nos pepites
-            </p>
-            {% else %}
-              <p>
-                Cher Administrateur merci d'avoir choisit T.T.G Network - Gestion École.
-                la charge est en grande a votre egard mais si vous avez autant d'
-                autorite c'est en guise de notre confiance, soyez en bonne sante pour le 
-                bien des operations!
-            </p>
-            {% endif %}
-          {% endif %}
-        <button><a href="{% url 'urlregister' %}">Ajout d'un user</a></button>
-        <button><a href="{% url 'urllogout' %}">se deconnecter</a></button>
-        <hr>
-        <hr>
-      </main>
+   <!-- À partir de la ligne du <main> -->
+
+    <main class="py-4 text-center">
+      <p class="lead">Utilisateur connecté : <strong>{{ user }}</strong></p>
+
+      {% if user.is_authenticated %}
+        {% if user.role %}
+          <p class="text-primary h4">Bienvenue cher <strong>{{ user.role }}</strong> !</p>
+        {% else %}
+          <p class="text-primary h4">Bienvenue cher <strong>Admin</strong> !</p>
+        {% endif %}
+
+        {% if user.matricule %}
+          <p class="text-info">Ton matricule est : <strong>{{ user.matricule }}</strong></p>
+          <div class="alert alert-success" role="alert" style="max-width: 800px; margin: auto;">
+            <strong>Message à l'étudiant :</strong><br>
+            Merci d'avoir choisi <em>T.T.G Network - Gestion École</em>. Nous vous garantissons un apprentissage sérieux et rigoureux. Main dans la main, nous comblerons nos lacunes ensemble. Bon courage !
+          </div>
+        {% elif user.code_formateur %}
+          <p class="text-info">Ton code est : <strong>{{ user.code_formateur }}</strong></p>
+          <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: auto;">
+            <strong>Message au formateur :</strong><br>
+            Merci pour votre engagement avec T.T.G Network. Nous croyons en vos compétences. Formons ensemble des pépites.
+          </div>
+        {% else %}
+          <div class="alert alert-dark" role="alert" style="max-width: 800px; margin: auto;">
+            <strong>Message à l’administrateur :</strong><br>
+            Merci pour votre dévouement. Votre autorité est un symbole de notre confiance. Prenez soin de votre santé pour assurer la continuité des opérations !
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <div class="mt-4 d-flex justify-content-center gap-3" style="gap: 20px;">
+        <a href="{% url 'urlregister' %}" class="btn btn-outline-primary px-4 py-2">
+          <i class="fa fa-user-plus"></i> Ajouter un utilisateur
+        </a>
+        <a href="{% url 'urllogout' %}" class="btn btn-outline-danger px-4 py-2">
+          <i class="fa fa-sign-out"></i> Se déconnecter
+        </a>
+      </div>
+
+      <hr class="my-4" style="width: 80%;">
+    </main>
+
     </div>
   </section>
   
@@ -171,7 +240,7 @@
             <ul>
               <li><span class="icon fa fa-map-marker"></span><span class="text">Pointe-Noire, Republique du congo</span></li>
               <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+242 06 834 44 01</span></a></li>
-              <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+              <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">argusblack242@gmail.com</span></a></li>
             </ul>
           </div>
         </div>

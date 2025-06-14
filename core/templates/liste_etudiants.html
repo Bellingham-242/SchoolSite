@@ -10,7 +10,6 @@
             <th>Options et ses details</th>
             <th>Niveau</th>
             <th>Date D'inscription</th>
-            <th>Actions</th>
           </thead>
         {% for etudiant in etudiants %}
           <tbody>
@@ -18,7 +17,6 @@
               <td>{{ etudiant.option }}</td>
               <td>{{ etudiant.niveau }}</td>
               <td>{{ etudiant.date_inscription }}</td>
-              <td><a href="#"><button>Details</button></a></td>
           </tbody>
           <tfoot>
             ...

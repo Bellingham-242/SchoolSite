@@ -9,14 +9,12 @@
 			    <th>L'etudiant</th>
           <th>Matiere</th>
           <th>Valeur</th>
-          <th>Actions</th>
 			</thead>
       {% for note in notes %}
 			<tbody>
 				  <td>{{ note.etudiant }}</td>
           <td>{{ note.matiere }}</td>
           <td>{{ note.valeur }}</td>
-          <td><a href="#"><button>Details</button></a></td>
 			</tbody>
 			<tfoot>
 			...

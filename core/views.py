@@ -219,9 +219,8 @@ def liste_emargements_view(request):
 
 
 #L'authentification
+@login_required
 def register(request): 
-    if not request.user.is_staff:
-        return HttpResponseForbidden("vous n'avez pas la permission de valider une inscription")
     if request.method == 'POST': 
         nom = request.POST.get('nom') 
         email = request.POST.get('email') 

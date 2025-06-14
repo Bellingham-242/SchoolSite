@@ -9,14 +9,12 @@
 			    <th>Matieres</th>
           <th>Coefficient</th>
           <th>Option et ses details</th>
-          <th>Actions</th>
 			</thead>
       {% for matiere in matieres %}
 			<tbody>
 				  <td>{{ matiere.nom }}</td>
           <td>{{ matiere.coefficient }}</td>
           <td>{{ matiere.option }}</td>
-          <td><a href="#"><button>Details</button></a></td>
 			</tbody>
       {% endfor %}
 			<tfoot>

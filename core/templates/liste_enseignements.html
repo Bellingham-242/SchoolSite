@@ -8,13 +8,11 @@
         <thead>
           <th>Enseignants</th>
           <th>Matiere et ses details</th>
-          <th>Actions</th>
         </thead>
         {% for enseignement in enseignements %}
         <tbody>
             <td>{{ enseignement.formateur }}</td>
             <td>{{ enseignement.matiere }}</td>
-            <td><a href="#"><button>Details</button></a></td>
         </tbody>
         <tfoot>
           ...

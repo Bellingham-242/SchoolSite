@@ -96,23 +96,33 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav" style="font-family:Georgia, 'Times New Roman', Times, serif;font-size:large;">
-				<div class="collapse navbar-collapse" id="ftco-nav" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: large;">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">Administrateur</a></li>
-          <li class="nav-item"><a href="{% url 'liste_emargements' %}" class="nav-link">Emargements</a></li>
-          <li class="nav-item"><a href="{% url 'recherche_moyenne' %}" class="nav-link">Moyennes</a></li>
-          <li class="nav-item"><a href="{% url 'filiere' %}" class="nav-link">Filieres</a></li>
-          <li class="nav-item"><a href="{% url 'etudiant' %}" class="nav-link">Etudiants</a></li>
-          <li class="nav-item"><a href="{% url 'matiere' %}" class="nav-link">Matieres</a></li>
-          <li class="nav-item"><a href="{% url 'preinscription' %}" class="nav-link">Preinscriptions</a></li>
-          <li class="nav-item"><a href="{% url 'enseignement' %}" class="nav-link">Enseignements</a></li>
-          <li class="nav-item"><a href="{% url 'options' %}" class="nav-link">Options</a></li>
-          <li class="nav-item"><a href="{% url 'article' %}" class="nav-link">Articles</a></li>
-          <li class="nav-item"><a href="{% url 'niveau' %}" class="nav-link">Niveaux</a></li>
-          <li class="nav-item"><a href="{% url 'note' %}" class="nav-link">Notes</a></li>
-        </ul>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+          <div>
+            <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link">Gestion</a></li>
+            <li class="nav-item"><a href="{% url 'liste_emargements' %}" class="nav-link">Emargements</a></li>
+          </div>
+					<div>
+            <li class="nav-item"><a href="{% url 'recherche_moyenne' %}" class="nav-link">Moyennes</a></li>
+            <li class="nav-item"><a href="{% url 'filiere' %}" class="nav-link">Filieres</a></li>
+          </div>
+          <div>
+            <li class="nav-item"><a href="{% url 'etudiant' %}" class="nav-link">Etudiants</a></li>
+            <li class="nav-item"><a href="{% url 'matiere' %}" class="nav-link">Matieres</a></li>
+          </div>
+					<div>
+            <li class="nav-item"><a href="{% url 'preinscription' %}" class="nav-link">Preinscriptions</a></li>
+            <li class="nav-item"><a href="{% url 'enseignement' %}" class="nav-link">Enseignements</a></li>
+          </div>
+          <div>
+            <li class="nav-item"><a href="{% url 'options' %}" class="nav-link">Options</a></li>
+            <li class="nav-item"><a href="{% url 'article' %}" class="nav-link">Articles</a></li>
+          </div>
+          <div>
+            <li class="nav-item"><a href="{% url 'niveau' %}" class="nav-link">Niveaux</a></li>
+            <li class="nav-item"><a href="{% url 'note' %}" class="nav-link">Notes</a></li>
+          </div>
+				</ul>
 			</div>
 		</div>
 
